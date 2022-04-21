@@ -52,7 +52,8 @@ def addBook(isbn,title,author,available,total):
     if displayBook(isbn):
         crsr.execute("SELECT DISTINCT Total FROM User")
         v = crsr.fetchone()
-        crsr.execute("UPDATE User SET Total=" + str(v[3] + total) + "WHERE Isbn=" + isbn + ";")
+        crsr.execute("UPDATE User SET Available=" + str(v[3] + total) + "WHERE Isbn=" + isbn + ";")
+        crsr.execute("UPDATE User SET Total=" + str(v[4] + total) + "WHERE Isbn=" + isbn + ";")
     else:
         crsr.execute("INSERT INTO User VALUES (Title,Author,Isbn,Availabe,Total) (" + title + "," + author + "," +
                      str(isbn) + "," + str(available) + str(total) + ");")
