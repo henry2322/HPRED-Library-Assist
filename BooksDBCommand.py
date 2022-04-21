@@ -53,3 +53,6 @@ def delBook(isbn):
     crsr = libDB.cursor()
     if displayBook(isbn):
         crsr.execute("DELETE FROM User WHERE Isbn=" + isbn + ";")
+        crsr.commit()
+    crsr.close()
+
