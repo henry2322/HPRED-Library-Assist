@@ -28,7 +28,7 @@ def searchBook(searching, searchMode):
 def displayBook(ISBN):
     crsr = libDB.cursor()
     crsr.execute("SELECT * FROM User WHERE Isbn=" + ISBN + ";")
-    ans = crsr.fetchall()
+    ans = crsr.fetchone()
     if ans:
         print(ans)
         crsr.close()
@@ -41,7 +41,7 @@ def addBook(isbn,title,author,total):
     crsr = libDB.cursor()
     if displayBook(isbn):
         crsr.execute("SELECT DISTINCT Total FROM User")
-        v = crsr.fetchall()
+        v = crsr.fetchone()
         crsr.execute("UPDATE User SET Total=" + str(v[3] + total) + "WHERE Isbn=" + isbn + ";")
     else:
         crsr.execute("INSERT INTO User VALUES (Title,Author,Isbn,Total) (" + title + "," + author + "," + str(isbn) +
