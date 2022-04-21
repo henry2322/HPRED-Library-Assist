@@ -52,4 +52,4 @@ def addBook(isbn,title,author,available,total):
 def delBook(isbn):
     crsr = libDB.cursor()
     if displayBook(isbn):
-        crsr.execute("DELETE FROM User Where Isbn=" + isbn + ";")
+        crsr.execute("DELETE FROM User WHERE Isbn=" + isbn + ";")
