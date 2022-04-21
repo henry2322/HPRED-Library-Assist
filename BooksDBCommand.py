@@ -6,7 +6,7 @@ libDB = sqlite3.connect('library.db')
 def initDB():
     crsr = libDB.cursor()
     crsr.execute("""CREATE Table User (Title varchar(255), Author varchar(255), Isbn int, Available int, Total int)""")
-    a_file = open("test.csv")
+    a_file = open("book.csv")
     rows = csv.reader(a_file)
     crsr.executemany("INSERT INTO User VALUES (?, ?, ?, ?, ?)", rows)
 
