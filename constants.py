@@ -1,0 +1,4 @@
+USERPROFILECSV_PATH = "userprofiles.csv"
+DELETED_USER = "0"
+NORMAL_USER = "1"
+SUPER_USER = "2"
