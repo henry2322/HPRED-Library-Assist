@@ -71,3 +71,21 @@ class UserProfile:
 
     def cancelHold(self):
         raise NotImplementedError
+
+
+    #Search Display
+    def bookSelection(self):
+        raise NotImplementedError
+    
+    #might combine with function from book database unless 1 function is for super user and 1 for normal user ()
+    def getBookInfo(self):
+        raise NotImplementedError
+
+
+
+    #Main Menu
+    def login(self):
+        raise NotImplementedError
+
+    def displaySearch(self):
+        raise NotImplementedError
