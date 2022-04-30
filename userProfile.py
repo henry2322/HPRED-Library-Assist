@@ -1,4 +1,5 @@
 from profilesDB import profilesDataBase
+from booksDB import booksDB
 import constants
 
 class UserProfile:
@@ -7,6 +8,8 @@ class UserProfile:
         self.userID = None
         self.userStatus = None
         self.confirmLogin()
+        self.book = booksDB
+        self.searched = []
 
     def confirmLogin(self):
         profileDict = self.profilesdatabase.getProfileDict()
@@ -47,17 +50,24 @@ class UserProfile:
 
 
     #Book Database
-    def addBook(self):
-        raise NotImplementedError
+    def addBook(self, title: str, author: str, isbn: int, total: int):
+        self.book.addBook(isbn, title, author, total)
     
 
-    def removeBook(self):
-        raise NotImplementedError
+    def removeBook(self, isbn: int):
+        self.book.delBook(isbn)
 
     
-    def searchBook(self):
-        raise NotImplementedError
-    
+    def searchBook(self, searchStr: str, mode: int):
+        self.searched = self.book.searchBook(searchStr, mode)
+        
+        
+    def diplayBook(self, index: int):
+        if(len(self.searched) == 0):
+            return
+        if(index >= 0 and index < len(self.searched)):
+            self.book.displayBook(self.searched[index])
+            self.searched = []
 
 
     #Holds Database
