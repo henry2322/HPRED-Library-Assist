@@ -1,4 +1,5 @@
 class holdsDB:
+    def __init__(self):pass
     # writes ISBN & profile_ID to end of holds.csv
     def request_hold(self, ISBN: int, profile_ID: str):
         with open('holds.csv', 'a') as file:
@@ -28,3 +29,8 @@ class holdsDB:
                     print(line.split(',')[0])
                     found2 = True
         return found2
+if __name__ == '__main__':
+    x = holdsDB()
+    requestHold = x.request_hold(9780812988529,"Henry")
+    printholds = x.getHolds("11687674")
+    

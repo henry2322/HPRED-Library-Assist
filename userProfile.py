@@ -1,5 +1,6 @@
 from profilesDB import profilesDataBase
 from booksDB import booksDB
+from holdsDB import holdsDB
 import constants
 
 class UserProfile:
@@ -8,8 +9,12 @@ class UserProfile:
         self.userID = None
         self.userStatus = None
         self.confirmLogin()
-        self.book = booksDB
+        self.book = booksDB()
         self.searched = []
+        self.hold = holdsDB()
+        self.ISBN = None
+        profile_ID = None
+        
 
     def confirmLogin(self):
         profileDict = self.profilesdatabase.getProfileDict()
@@ -62,7 +67,7 @@ class UserProfile:
         self.searched = self.book.searchBook(searchStr, mode)
         
         
-    def diplayBook(self, index: int):
+    def displayBook(self, index: int):
         if(len(self.searched) == 0):
             return
         if(index >= 0 and index < len(self.searched)):
@@ -71,12 +76,14 @@ class UserProfile:
 
 
     #Holds Database
-    def getHolds(self):
-        raise NotImplementedError
+    def getHolds(self,profile_ID: str):
+        self.hold.getHolds(profile_ID)
     
 
-    def requestHold(self):
-        raise NotImplementedError
+    def requestHold(self, ISBN: int, profile_ID: str):
+        self.hold.request_hold(ISBN,profile_ID)
+
+        
     
 
     def cancelHold(self):

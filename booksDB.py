@@ -106,15 +106,15 @@ class booksDB:
 
 if __name__ == '__main__':
     x = booksDB()
-    a = x.searchBook("The Power of Habit", 0)
-    a = x.searchBook("Land Apart: A South African Reader", 0)
-    a = x.searchBook("the", 0)
-    a = x.searchBook("African", 1)
-    a = x.searchBook(19, 2)
-    b = x.displayBook(a[1])
+    #a = x.searchBook("The Power of Habit", 0)
+    #a = x.searchBook("Land Apart: A South African Reader", 0)
+    #a = x.searchBook("the", 0)
+    #a = x.searchBook("African", 1)
+    #a = x.searchBook(19, 2)
+    #b = x.displayBook(a[1])
     b = x.displayBook(0)
-    x.addBook(812981605, "The Power of Habit", "Charles Duhigg", 3)
-    x.addBook(140100040, "Land Apart: A South African Reader", "Various", 2)
-    x.delBook(812981605)
-    x.delBook(0)
-    f = "finished"
+    #x.addBook(812981605, "The Power of Habit", "Charles Duhigg", 3)
+    #x.addBook(140100040, "Land Apart: A South African Reader", "Various", 2)
+    #x.delBook(812981605)
+    #x.delBook(0)
+    #f = "finished"
