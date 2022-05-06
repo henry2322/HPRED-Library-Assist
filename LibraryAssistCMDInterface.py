@@ -29,7 +29,7 @@ if __name__ == "__main__":
                 elif userinput[0] == "addBook" and len(userinput) == 5:
                     user.addBook(userinput[1], userinput[2], userinput[3], userinput[4])    
                 elif userinput[0] == "removeBook" and len(userinput) == 2:
-                    user.removeBook(userinput[1])
+                    user.removeBook(int(userinput[1]))
 
             else:
                 print("Invalid Input")
