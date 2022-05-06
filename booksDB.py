@@ -22,8 +22,8 @@ class booksDB:
                         t += 1
                     val[0] = val[0] + val[t]
                     val[1] = val[t + 1]
-                if str(searching) in val[searchMode]:
-                    print(str(i) + ". " + val[0] + "  " + val[1] + "  " + val[-3])
+                if str(searching).lower() in val[searchMode].lower():
+                    print(str(i) + ". " + val[0] + "    " + val[1] + "    " + val[-3])
                     list.append(int(val[-3]))
                     i += 1
             if len(list) == 0:
