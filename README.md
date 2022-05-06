@@ -5,7 +5,7 @@ This project is about creating a software in which a group of 5 people will help
 # Team Info
 For the team we have 5 people, Henry, Phillip, Rafael, Ethan, and Dathan. All of which we all have experienced in with coding C/C++ or Python. We wish to implement the software on either language but, we are leaning towards Python as our main language we will use for this project.
 
-#Instructions on Program 
+# Instructions on Program 
 For User Profiles
 For the User profile features you must enter a ID that is in the csv file. 0 indicates deletedUser(which can't access anything and must retype ID) 1 indicates  normalUser (which only have access to functions that dont modify the database) 1 superUser or admin (which access every command displayed). Enter valid ID:
 superUser = all commands
