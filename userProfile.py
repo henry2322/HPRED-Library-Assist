@@ -70,8 +70,8 @@ class UserProfile:
     def displayBook(self, index: int):
         if(len(self.searched) == 0):
             return
-        if(index >= 0 and index < len(self.searched)):
-            self.book.displayBook(self.searched[index])
+        if(index - 1 >= 0 and index - 1 < len(self.searched)):
+            self.book.displayBook(self.searched[index - 1])
             self.searched = []
 
 
